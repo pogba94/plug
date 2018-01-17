@@ -1,7 +1,7 @@
 # plug
 Solution for plug
 ## Function Describtion
-1. wechat control
-2. JSON format
-3. mbed os
-4. MD5 and crc16
+*  Wechat control based on socket api
+*  JSON format
+*  Mbed os 2.0
+*  MD5 for version check
