@@ -31,6 +31,7 @@
 
 #define OTA_REWRITE_TIMES              (5)
 #define DEFAULT_VERSION_SN             "34c18825699a9ca2f1ae3bc4257ade5f"
+#define DEFAULT_CHARGING_TIME                   (60)
 /*-------Macro Definition---------------------------------------------*/
 #if FuncCfg_Led
 #define    SERVER_CONNECT_LED_ON     (server = 1)

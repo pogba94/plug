@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\build\uvision5\SharedPlugs.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\build\uvision5\SharedPlugs.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060020: Last Updated: Wed Jan 17 10:21:16 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060020: Last Updated: Wed Jan 17 17:55:26 2018
 <BR><P>
 <H3>Maximum Stack Usage =       1064 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2868,10 +2868,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[201]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
+<BR>[Called By]<UL><LI><a href="#[1ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
+<LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgTransceiverHandle()
+<LI><a href="#[201]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 </UL>
 
-<P><STRONG><a name="[20c]"></a>cmdMsgRespHandle(_msgId)</STRONG> (Thumb, 450 bytes, Stack size 80 bytes, main.o(i._Z16cmdMsgRespHandle6_msgId))
+<P><STRONG><a name="[20c]"></a>cmdMsgRespHandle(_msgId)</STRONG> (Thumb, 480 bytes, Stack size 80 bytes, main.o(i._Z16cmdMsgRespHandle6_msgId))
 <BR><BR>[Stack]<UL><LI>Max Depth = 872 + Unknown Stack Size
 <LI>Call Chain = cmdMsgRespHandle(_msgId) &rArr; TCPSocketConnection::send(char*, int) &rArr; lwip_send &rArr; lwip_sendto &rArr;  lwip_send (Cycle)
 </UL>
@@ -2884,7 +2886,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[200]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
 </UL>
 
-<P><STRONG><a name="[200]"></a>parseRecvMsgInfo(char*)</STRONG> (Thumb, 1708 bytes, Stack size 48 bytes, main.o(i._Z16parseRecvMsgInfoPc))
+<P><STRONG><a name="[200]"></a>parseRecvMsgInfo(char*)</STRONG> (Thumb, 1790 bytes, Stack size 48 bytes, main.o(i._Z16parseRecvMsgInfoPc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 920 + Unknown Stack Size
 <LI>Call Chain = parseRecvMsgInfo(char*) &rArr; cmdMsgRespHandle(_msgId) &rArr; TCPSocketConnection::send(char*, int) &rArr; lwip_send &rArr; lwip_sendto &rArr;  lwip_send (Cycle)
 </UL>
@@ -2917,8 +2919,8 @@ Global Symbols
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 
-<P><STRONG><a name="[20f]"></a>parseBincodeBuffer(char*)</STRONG> (Thumb, 420 bytes, Stack size 48 bytes, main.o(i._Z18parseBincodeBufferPc))
-<BR><BR>[Stack]<UL><LI>Max Depth = 680 + Unknown Stack Size
+<P><STRONG><a name="[20f]"></a>parseBincodeBuffer(char*)</STRONG> (Thumb, 474 bytes, Stack size 56 bytes, main.o(i._Z18parseBincodeBufferPc))
+<BR><BR>[Stack]<UL><LI>Max Depth = 688 + Unknown Stack Size
 <LI>Call Chain = parseBincodeBuffer(char*) &rArr; wait &rArr; us_ticker_read &rArr; us_ticker_init &rArr; BOARD_BootClockRUN &rArr; CLOCK_BootToPeeMode &rArr; CLOCK_SetPbeMode &rArr; __aeabi_assert &rArr; __assert_puts &rArr; fflush &rArr; _do_fflush &rArr; _fflush &rArr; _writebuf &rArr; _sys_write &rArr; serial_init &rArr;  BOARD_BootClockRUN (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
@@ -2935,9 +2937,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[200]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
 </UL>
 
-<P><STRONG><a name="[218]"></a>msgTransceiverHandle()</STRONG> (Thumb, 206 bytes, Stack size 16 bytes, main.o(i._Z20msgTransceiverHandlev), UNUSED)
+<P><STRONG><a name="[218]"></a>msgTransceiverHandle()</STRONG> (Thumb, 224 bytes, Stack size 24 bytes, main.o(i._Z20msgTransceiverHandlev), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[1ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::receive_all(char*, int)
 <LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
+<LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffIsEmpty(_ringBuff*)
 <LI><a href="#[200]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
 <LI><a href="#[201]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
@@ -4791,7 +4794,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lwip_init
 </UL>
 
-<P><STRONG><a name="[1ca]"></a>$Super$$main</STRONG> (Thumb, 782 bytes, Stack size 112 bytes, main.o(i.main))
+<P><STRONG><a name="[1ca]"></a>$Super$$main</STRONG> (Thumb, 794 bytes, Stack size 112 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 1056 + Unknown Stack Size
 <LI>Call Chain = $Super$$main &rArr; msgSendHandle(_msgId) &rArr; TCPSocketConnection::send(char*, int) &rArr; lwip_send &rArr; lwip_sendto &rArr;  lwip_send (Cycle)
 </UL>
@@ -4807,6 +4810,7 @@ Global Symbols
 <LI><a href="#[250]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Thread::constructor(mbed::Callback&lang;void()&rang;, osPriority, unsigned, unsigned char*)
 <LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::SerialBase::baud(int)
 <LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPort()
+<LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffIsEmpty(_ringBuff*)
 <LI><a href="#[1fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffIsFull(_ringBuff*)
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setPortStatus(unsigned char, _portStatus)
 <LI><a href="#[1fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffPush(_ringBuff*, unsigned char)

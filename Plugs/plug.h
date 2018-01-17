@@ -131,7 +131,8 @@ typedef struct _OTAInfo{
 #define  PACK_RESP_SET_PORT_STATUS_ALL  PACK_RESP_STD
 #define  PACK_RESP_MULTI_SET_PORT_ON_OFF   PACK_RESP_STD
 
-#define  MAP(x)     (x==ON?1:0)  
+#define  MAP_TO_LOGIC(x)     (x==ON?1:0)
+#define  MAP_FROM_LOGIC(x)   (x==1?ON:OFF)
 /*--------Function declaration----------------------------------------------*/
 void initPort(void);
 uint8_t getPortStatus(uint8_t index);

@@ -35,7 +35,7 @@ const char* DEFAULT_SERVER_IP = "192.168.0.100";
 const int DEFAULT_SERVER_PORT = 49999;
 #endif
 
-const char* VERSION_DESCRIBTION = "Firmware of shared plug,run with mbed os 2.0\r\nVersion:V1.0.2\r\n";
+const char* VERSION_DESCRIBTION = "Firmware of shared plug,run with mbed os 2.0\r\nVersion:V1.0.0\r\nDate:2018-01-17\r\n";
 /* Debug UART */
 Serial pc(USBTX, USBRX);
 /* GPIO Definition */
@@ -417,6 +417,14 @@ void parseBincodeBuffer(char *text)
 						eventHandle.deviceStatusUpdateFlag = true;
 						initOTA();  //recover OTA partition
 					}
+				}else{//parameter error!
+					#if FuncCfg_DebugImfo
+						pc.printf("Parameters error!OTA Fail!\r\n");
+					#endif
+					plug.deviceStatus = OTA_FAIL;
+					eventHandle.updateRequestFlag = false;
+					eventHandle.deviceStatusUpdateFlag =true;
+					initOTA();
 				}
 		 free(buf);
 		}
@@ -442,17 +450,19 @@ void cmdMsgRespHandle(MsgId_t msgId)
 	else if(msgId == cmdGetPortStatus){
 		if(msgHandle.respBuf.index==100)
 			sprintf(socketInfo.outBuffer,PACK_RESP_GET_ALL_PORT_STATUS,msgHandle.msgIdStr,GET_PORT_STATUS_RECV,msgHandle.respCode,
-				MAP(plug.portStatus[0]),MAP(plug.portStatus[1]),MAP(plug.portStatus[2]),MAP(plug.portStatus[3]),
-				MAP(plug.portStatus[4]),MAP(plug.portStatus[5]),MAP(plug.portStatus[6]),MAP(plug.portStatus[7]),
-				MAP(plug.portStatus[8]),MAP(plug.portStatus[9]),MAP(plug.portStatus[10]),MAP(plug.portStatus[11]),
-				MAP(plug.portStatus[12]),MAP(plug.portStatus[13]),MAP(plug.portStatus[14]),MAP(plug.portStatus[15])
+				MAP_TO_LOGIC(plug.portStatus[0]),MAP_TO_LOGIC(plug.portStatus[1]),MAP_TO_LOGIC(plug.portStatus[2]),MAP_TO_LOGIC(plug.portStatus[3]),
+				MAP_TO_LOGIC(plug.portStatus[4]),MAP_TO_LOGIC(plug.portStatus[5]),MAP_TO_LOGIC(plug.portStatus[6]),MAP_TO_LOGIC(plug.portStatus[7]),
+				MAP_TO_LOGIC(plug.portStatus[8]),MAP_TO_LOGIC(plug.portStatus[9]),MAP_TO_LOGIC(plug.portStatus[10]),MAP_TO_LOGIC(plug.portStatus[11]),
+				MAP_TO_LOGIC(plug.portStatus[12]),MAP_TO_LOGIC(plug.portStatus[13]),MAP_TO_LOGIC(plug.portStatus[14]),MAP_TO_LOGIC(plug.portStatus[15])
 			);
 		else
-		sprintf(socketInfo.outBuffer,PACK_RESP_GET_PORT_STATUS,msgHandle.msgIdStr,GET_PORT_STATUS_RECV,msgHandle.respCode,msgHandle.respBuf.index,MAP(msgHandle.respBuf.statu));
+		sprintf(socketInfo.outBuffer,PACK_RESP_GET_PORT_STATUS,msgHandle.msgIdStr,GET_PORT_STATUS_RECV,msgHandle.respCode,msgHandle.respBuf.index,MAP_TO_LOGIC(msgHandle.respBuf.statu));
 	}
 	else if(msgId == cmdUpdateVersion)
 		sprintf(socketInfo.outBuffer,PACK_RESP_UPDATE_VERSION,msgHandle.msgIdStr,UPDATE_RECV,msgHandle.respCode);
-	else
+	else if(msgId == cmdMultiPortOnOff)
+		sprintf(socketInfo.outBuffer,PACK_RESP_MULTI_SET_PORT_ON_OFF,msgHandle.msgIdStr,MULTI_PORTS_ON_OFF_RECV,msgHandle.respCode);
+	else 
 		return;
 	len = strlen(socketInfo.outBuffer);
 	tcpsocket.send(socketInfo.outBuffer,len);
@@ -627,7 +637,7 @@ void parseRecvMsgInfo(char* text)
 								#endif
 							}
 						cmdMsgRespHandle(msgHandle.recvMsgId);
-				}else if(id == MULTI_PORTS_ON_OFF_RECV){//batch set ports on or off
+				}else if(id == MULTI_PORTS_ON_OFF_RECV){//batch set ports on or off,interface for debug!
 					msgHandle.recvMsgId = cmdMultiPortOnOff;
 					if(cJSON_GetObjectItem(json,"portStatus") != NULL){//check item!
 							cJSON* array;
@@ -640,11 +650,47 @@ void parseRecvMsgInfo(char* text)
 						  if(itemNum != USED_PORT_NUM){
 								msgHandle.respCode = RESP_PARAM_ERROR;
 							}else{
+								int temp;
+								msgHandle.respCode = RESP_OK;
 								for(int i =0;i<USED_PORT_NUM;i++){
-									pc.printf("Set port[%d]=%d\r\n",i,cJSON_GetArrayItem(array,i)->valueint);
+									temp = cJSON_GetArrayItem(array,i)->valueint;
+									#if FuncCfg_DebugImfo
+									pc.printf("Set port[%d]=%d\r\n",i,temp);
+									#endif
+									if(plug.portStatus[i] == ON){
+										if(temp == 1){
+											plug.setDuration[i] = DEFAULT_CHARGING_TIME;//Reset charging time
+											plug.duration[i] = 0;
+										}else if(temp == 0){
+											plug.setDuration[i] = 0;
+											plug.duration[i] = 0;
+											setPortStatus(i,OFF);
+											plug.portStatus[i] = OFF;
+											if(ringBuffIsFull((pRingBuff_t)&plug.portStatusChange)==0){
+												ringBuffPush((pRingBuff_t)&plug.portStatusChange,i);//notify to server when staus change
+												eventHandle.portStatusUpdateFlag = true;
+											}
+										}
+									}else if(plug.portStatus[i] == OFF){
+										if(temp == 1){
+											plug.setDuration[i] = DEFAULT_CHARGING_TIME;
+											plug.duration[i] = 0;
+											setPortStatus(i,ON);
+											plug.portStatus[i] = ON;
+											if(ringBuffIsFull((pRingBuff_t)&plug.portStatusChange)==0){
+												ringBuffPush((pRingBuff_t)&plug.portStatusChange,i);//notify to server when staus change
+												eventHandle.portStatusUpdateFlag = true;
+											}
+										}else if(temp == 0){
+											//do nothing
+										}
+									}
 								}
 							}
+						}else{
+							msgHandle.respCode = RESP_ITEM_ERROR;
 						}
+						cmdMsgRespHandle(msgHandle.recvMsgId); //Send respond!
 				}
 			}
 			}else{//respond pack!
@@ -700,10 +746,10 @@ void msgSendHandle(MsgId_t sendMsgId)
 	memset(socketInfo.outBuffer,0,sizeof(socketInfo.outBuffer));  //initialize buffer
 	if(sendMsgId == reqConnect){
 		sprintf(socketInfo.outBuffer,PACK_REQ_CONNECT,CONNECT_REQUEST_PUSH,plug.versionSN,plugModelNO,(plug.connCnt>1?1:0),
-				MAP(plug.portStatus[0]),MAP(plug.portStatus[1]),MAP(plug.portStatus[2]),MAP(plug.portStatus[3]),
-				MAP(plug.portStatus[4]),MAP(plug.portStatus[5]),MAP(plug.portStatus[6]),MAP(plug.portStatus[7]),
-				MAP(plug.portStatus[8]),MAP(plug.portStatus[9]),MAP(plug.portStatus[10]),MAP(plug.portStatus[11]),
-				MAP(plug.portStatus[12]),MAP(plug.portStatus[13]),MAP(plug.portStatus[14]),MAP(plug.portStatus[15])
+				MAP_TO_LOGIC(plug.portStatus[0]),MAP_TO_LOGIC(plug.portStatus[1]),MAP_TO_LOGIC(plug.portStatus[2]),MAP_TO_LOGIC(plug.portStatus[3]),
+				MAP_TO_LOGIC(plug.portStatus[4]),MAP_TO_LOGIC(plug.portStatus[5]),MAP_TO_LOGIC(plug.portStatus[6]),MAP_TO_LOGIC(plug.portStatus[7]),
+				MAP_TO_LOGIC(plug.portStatus[8]),MAP_TO_LOGIC(plug.portStatus[9]),MAP_TO_LOGIC(plug.portStatus[10]),MAP_TO_LOGIC(plug.portStatus[11]),
+				MAP_TO_LOGIC(plug.portStatus[12]),MAP_TO_LOGIC(plug.portStatus[13]),MAP_TO_LOGIC(plug.portStatus[14]),MAP_TO_LOGIC(plug.portStatus[15])
 		);
 	}else if(sendMsgId == reqNotifyDeviceStatus){
 		sprintf(socketInfo.outBuffer,PACK_REQ_NOTIFY_DEVICE_STATUS,STATUS_CHANGE_PUSH,plug.deviceStatus);
@@ -712,14 +758,14 @@ void msgSendHandle(MsgId_t sendMsgId)
 			if(ringBuffIsEmpty((pRingBuff_t)(&plug.portStatusChange)) == 0){
 				int index;
 				index = ringBuffPop((pRingBuff_t)(&plug.portStatusChange));
-				sprintf(socketInfo.outBuffer,PACK_REQ_NOTIFY_PORT_STATUS,STATUS_CHANGE_PUSH,index,MAP(plug.portStatus[index]));
+				sprintf(socketInfo.outBuffer,PACK_REQ_NOTIFY_PORT_STATUS,STATUS_CHANGE_PUSH,index,MAP_TO_LOGIC(plug.portStatus[index]));
 				msgHandle.portStatusNotifyDone = false;
 				/* save index and statu of port to buffer */
 				msgHandle.sendBuf.index = index;
 				msgHandle.sendBuf.statu = plug.portStatus[index];
 			}
 		}else{
-			sprintf(socketInfo.outBuffer,PACK_REQ_NOTIFY_PORT_STATUS,STATUS_CHANGE_PUSH,msgHandle.sendBuf.index,MAP(msgHandle.sendBuf.statu));
+			sprintf(socketInfo.outBuffer,PACK_REQ_NOTIFY_PORT_STATUS,STATUS_CHANGE_PUSH,msgHandle.sendBuf.index,MAP_TO_LOGIC(msgHandle.sendBuf.statu));
 		}
 	}else if(sendMsgId == reqOTA){
 		#if FuncCfg_DebugImfo
@@ -827,7 +873,8 @@ void msgTransceiverHandle(void)
 					#endif
 				}else if(eventHandle.portStatusUpdateFlag == true){
 					msgSendHandle(reqNotifyPortStatus);
-					eventHandle.portStatusUpdateFlag = false;
+					if(ringBuffIsEmpty((pRingBuff_t)&plug.portStatusChange))
+						eventHandle.portStatusUpdateFlag = false;
 					#if FuncCfg_DebugImfo
 						pc.printf("port status update request!\r\n");
 					#endif
