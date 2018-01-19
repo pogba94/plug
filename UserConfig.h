@@ -28,6 +28,7 @@
 #define OTA_BLOCKSIZE_POS   10
 #define OTA_CHECKSUM_POS    12
 #define OTA_BINDATA_POS     14
+#define OTA_MAX_PACK_SIZE   (1024)     //OTA pack size
 
 #define OTA_REWRITE_TIMES              (5)
 #define DEFAULT_VERSION_SN             "34c18825699a9ca2f1ae3bc4257ade5f"

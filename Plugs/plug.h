@@ -102,9 +102,11 @@ typedef struct _socketInfo {
 
 typedef struct _OTAInfo{
 	char versionSN[36];  //32 Bytes versionSN
-	int curSector;// 0-32
-	int sectorNum;
-	int lastSectorSize;   //Unit:Bytes
+	int curPackIndex;
+	int totalPackNum;
+	int curSector;
+	int sectorNum; //0-32
+	int lastPackSize;   //Unit:Bytes
 	int totalSize;  //Unit:Bytes
 	int checkSum;
 }OTAInfo_t;
