@@ -62,6 +62,7 @@ EthernetInterface eth;
 TCPSocketConnection tcpsocket;
 
 char tempBuffer[256];
+char OTABuffer[SECTOR_SIZE] = {0};  // only for ota
 char plugModelNO[16];         // set mac as the modle NO
 uint8_t versionId;
 char ECHO_SERVER_ADDRESS[20];
@@ -377,46 +378,54 @@ void parseBincodeBuffer(char *text)
 			pc.printf("crc16 = %x checksum = %x\r\n",crc16,checksum);
 			#endif
 			if(OTAInfo.curSector+1<OTAInfo.sectorNum)
-				curSectorSize = SECTOR_SIZE;
+				curSectorSize = OTA_MAX_PACK_SIZE;
 			else
 				curSectorSize = OTAInfo.lastSectorSize;
 			
-		 if(curSectorSize == blockSize && OTAInfo.curSector*SECTOR_SIZE == blockOffset && crc16 == checksum){
-					IAPCode iapCode;
-					#if FuncCfg_DebugImfo
-					pc.printf("Write sector %d %d bytes to ota partition\r\n",OTAInfo.curSector,blockSize);
-					#endif
-					erase_sector(OTA_CODE_START_ADDRESS+OTAInfo.curSector*SECTOR_SIZE);
-					iapCode = program_flash(OTA_CODE_START_ADDRESS+OTAInfo.curSector*SECTOR_SIZE,buf,blockSize);
-					crc16 = calculate_crc16((char*)OTA_CODE_START_ADDRESS+OTAInfo.curSector*SECTOR_SIZE,blockSize);
-					while(crc16 != checksum && reWriteCnt < OTA_REWRITE_TIMES){
-						erase_sector(OTA_CODE_START_ADDRESS+OTAInfo.curSector*SECTOR_SIZE);
-						iapCode = program_flash(OTA_CODE_START_ADDRESS+OTAInfo.curSector*SECTOR_SIZE,buf,blockSize);
-						#if FuncCfg_DebugImfo
-						pc.printf("Rewrite to sector %d\r\n",OTAInfo.curSector);
-						pc.printf("IapCode=%d\r\n",iapCode);
+		 if(curSectorSize == blockSize && OTAInfo.curSector*OTA_MAX_PACK_SIZE == blockOffset && crc16 == checksum){
+				memcpy(OTABuffer+blockOffset%SECTOR_SIZE,buf,blockSize);
+			  int sectorPos = (OTAInfo.curSector+1)/(SECTOR_SIZE/OTA_MAX_PACK_SIZE)-1;
+			  if((OTAInfo.curSector+1)%(SECTOR_SIZE/OTA_MAX_PACK_SIZE) == 0 || OTAInfo.curSector+1 == OTAInfo.sectorNum){//OTA buffer is full,start writing to flash
+						IAPCode iapCode;
+					  if(OTAInfo.curSector+1 == OTAInfo.sectorNum)   //Last OTA pack!
+							sectorPos += ((OTAInfo.curSector+1)%(SECTOR_SIZE/OTA_MAX_PACK_SIZE)!=0)?1:0; 
+					  #if FuncCfg_DebugImfo
+						pc.printf("write sector:%d,address=%08x,size=%d\r\n",sectorPos+1,OTA_CODE_START_ADDRESS+sectorPos*SECTOR_SIZE,sizeof(OTABuffer));
 						#endif
-						crc16 = calculate_crc16((char*)OTA_CODE_START_ADDRESS+OTAInfo.curSector*SECTOR_SIZE,blockSize);
-						reWriteCnt++;
-						wait(0.1);
+						checksum = calculate_crc16(OTABuffer,sizeof(OTABuffer));
+						erase_sector(OTA_CODE_START_ADDRESS+sectorPos*SECTOR_SIZE);
+						iapCode = program_flash(OTA_CODE_START_ADDRESS+sectorPos*SECTOR_SIZE,OTABuffer,sizeof(OTABuffer));
+						crc16 = calculate_crc16((char*)OTA_CODE_START_ADDRESS+sectorPos*SECTOR_SIZE,sizeof(OTABuffer));
+						while(crc16 != checksum && reWriteCnt < OTA_REWRITE_TIMES){
+							erase_sector(OTA_CODE_START_ADDRESS+sectorPos*SECTOR_SIZE);
+						  iapCode = program_flash(OTA_CODE_START_ADDRESS+sectorPos*SECTOR_SIZE,OTABuffer,sizeof(OTABuffer));
+							#if FuncCfg_DebugImfo
+							pc.printf("Rewrite to sector %d\r\n",sectorPos+1);
+							pc.printf("IapCode=%d\r\n",iapCode);
+							#endif
+							crc16 = calculate_crc16((char*)OTA_CODE_START_ADDRESS+sectorPos*SECTOR_SIZE,sizeof(OTABuffer));
+							reWriteCnt++;
+							wait(0.1);
+						}
+						#if FuncCfg_DebugImfo
+						pc.printf("reWriteCnt=%d\r\n",reWriteCnt);
+						#endif
+						if(crc16 == checksum){
+							#if FuncCfg_DebugImfo
+							pc.printf("Write and verify sector %d successfully\r\n",sectorPos+1);
+							#endif
+						}else{
+							#if FuncCfg_DebugImfo
+							pc.printf("Write sector %d failed!\r\n",sectorPos);
+							#endif
+							plug.deviceStatus = OTA_FAIL;  //device status change!
+							eventHandle.updateRequestFlag = false; //stop request for update
+							eventHandle.deviceStatusUpdateFlag = true;
+							initOTA();  //recover OTA partition
+						}
+						memset(OTABuffer,0xff,sizeof(OTABuffer)); //clear ota buffer!
 					}
-					#if FuncCfg_DebugImfo
-					pc.printf("reWriteCnt=%d\r\n",reWriteCnt);
-					#endif
-					if(crc16 == checksum){
-						#if FuncCfg_DebugImfo
-						pc.printf("Write and verify sector %d successfully\r\n",OTAInfo.curSector);
-						#endif
-						OTAInfo.curSector++;
-					}else{
-						#if FuncCfg_DebugImfo
-						pc.printf("Write sector %d failed!\r\n",OTAInfo.curSector);
-						#endif
-						plug.deviceStatus = OTA_FAIL;  //device status change!
-						eventHandle.updateRequestFlag = false; //stop request for update
-						eventHandle.deviceStatusUpdateFlag = true;
-						initOTA();  //recover OTA partition
-					}
+				  OTAInfo.curSector++;
 				}else{//parameter error!
 					#if FuncCfg_DebugImfo
 						pc.printf("Parameters error!OTA Fail!\r\n");
@@ -429,7 +438,7 @@ void parseBincodeBuffer(char *text)
 		 free(buf);
 		}
 	}
-	
+	msgHandle.sendMsgId = invalidId; //get respond! in case of message blocking
 }
 /*!
  * @brife: send the respond of command message
@@ -615,11 +624,11 @@ void parseRecvMsgInfo(char* text)
 									pc.printf("The new versinSN:%s\r\nTotal size:%d,Checksum:%x\r\n",OTAInfo.versionSN,OTAInfo.totalSize,OTAInfo.checkSum);
 									#endif
 									if(OTAInfo.totalSize % SECTOR_SIZE == 0){
-										OTAInfo.sectorNum = OTAInfo.totalSize / SECTOR_SIZE;
-										OTAInfo.lastSectorSize = SECTOR_SIZE;
+										OTAInfo.sectorNum = OTAInfo.totalSize / OTA_MAX_PACK_SIZE;
+										OTAInfo.lastSectorSize = OTA_MAX_PACK_SIZE;
 									}else{
-										OTAInfo.sectorNum = OTAInfo.totalSize / SECTOR_SIZE + 1;
-										OTAInfo.lastSectorSize = OTAInfo.totalSize % SECTOR_SIZE;
+										OTAInfo.sectorNum = OTAInfo.totalSize / OTA_MAX_PACK_SIZE + 1;
+										OTAInfo.lastSectorSize = OTAInfo.totalSize % OTA_MAX_PACK_SIZE;
 									}
 									msgHandle.respCode = RESP_OK;
 									eventHandle.updateRequestFlag = true;//start to update!
@@ -736,7 +745,6 @@ void msgSendHandle(MsgId_t sendMsgId)
 {
 	int crc16;
 	int len;
-	char buf[VERSION_STR_LEN];
 	if(sendMsgId == invalidId || sendMsgId >= unknownMsgId){
 		#if FuncCfg_DebugImfo
 			pc.printf("Invalid msg ID!\r\n");
@@ -774,22 +782,24 @@ void msgSendHandle(MsgId_t sendMsgId)
 		if(OTAInfo.curSector < OTAInfo.sectorNum){
 			if(OTAInfo.curSector + 1 == OTAInfo.sectorNum){
 				sprintf(socketInfo.outBuffer,PACK_REQ_UPDATE,UPDATE_REQUEST_PUSH,
-				OTAInfo.versionSN,OTAInfo.curSector*SECTOR_SIZE,OTAInfo.lastSectorSize);
+				OTAInfo.versionSN,OTAInfo.curSector*OTA_MAX_PACK_SIZE,OTAInfo.lastSectorSize);
 			}else{
 				sprintf(socketInfo.outBuffer,PACK_REQ_UPDATE,UPDATE_REQUEST_PUSH,
-				OTAInfo.versionSN,OTAInfo.curSector*SECTOR_SIZE,SECTOR_SIZE);
+				OTAInfo.versionSN,OTAInfo.curSector*OTA_MAX_PACK_SIZE,OTA_MAX_PACK_SIZE);
 			}
 		}else{ //recieve all sectors successfully,then write new version id to memory
 			#if FuncCfg_DebugImfo
 			pc.printf("Erase extra OTA partition!\r\n");
 			#endif
-			if(OTAInfo.sectorNum < CODE_SECTOR_NUM){
-				for(int i = OTAInfo.sectorNum;i<CODE_SECTOR_NUM;i++){
+			int secPos;
+			secPos = (OTAInfo.sectorNum)/(SECTOR_SIZE/OTA_MAX_PACK_SIZE)+((OTAInfo.sectorNum)%(SECTOR_SIZE/OTA_MAX_PACK_SIZE) != 0);
+			if(secPos < CODE_SECTOR_NUM){
+				for(int i = secPos;i<CODE_SECTOR_NUM;i++){
 					erase_sector(OTA_CODE_START_ADDRESS+i*SECTOR_SIZE);
 				}
 			}
 			eventHandle.updateRequestFlag = false;//stop to request updating
-			crc16 = calculate_crc16((char*)OTA_CODE_START_ADDRESS,OTAInfo.checkSum);
+			crc16 = calculate_crc16((char*)OTA_CODE_START_ADDRESS,OTAInfo.totalSize);
 			#if FuncCfg_DebugImfo
 			pc.printf("OTA code crc:%x checksum:%x\r\n",crc16,OTAInfo.checkSum);
 			#endif
@@ -797,21 +807,22 @@ void msgSendHandle(MsgId_t sendMsgId)
 				char* cData = (char*)VERSION_STR_ADDRESS;
 				crc16 = calculate_crc16((char*)OTA_CODE_START_ADDRESS,CODE_SIZE);
 				#if FuncCfg_DebugImfo
-				pc.printf("Download successfully!,Update OTA checksum infomation!\r\n");
+				pc.printf("Download successfully!,Update OTA checksum infomation!checksum:%04x\r\n",crc16);
 				#endif
-				memset(buf,0,VERSION_STR_LEN);
-				buf[0] = cData[2];
-				buf[1] = cData[3];
-				buf[2] = (crc16 >> 8) & 0xff; //Update OTA Checksum
-				buf[3] = crc16 & 0xff;
+				memset(tempBuffer,0,VERSION_STR_LEN);
+				tempBuffer[0] = cData[0];
+				tempBuffer[1] = cData[1];
+				tempBuffer[2] = (crc16 >> 8) & 0xff; //Update OTA Checksum
+				tempBuffer[3] = crc16 & 0xff;
 
 				erase_sector(VERSION_STR_ADDRESS);
-				program_flash(VERSION_STR_ADDRESS,buf,SECTOR_SIZE);
+				program_flash(VERSION_STR_ADDRESS,tempBuffer,SECTOR_SIZE);
 				tcpsocket.close();//notify to server!
+				pc.printf("Begin to update!\r\n");
 				updateCode(); //begin to update code !
 			}else{//check error
-				#if FuncCfg_DebufImfo
-				pc.printf("Checksum is different,Download fail!\r\n");
+				#if FuncCfg_DebugImfo
+				pc.printf("CRC16 value is different from checksum,Download fail!\r\n");
 				#endif
 				plug.deviceStatus = OTA_FAIL;
 				eventHandle.deviceStatusUpdateFlag = true; //notify to server!
