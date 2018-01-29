@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\build\uvision5\SharedPlugs.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\build\uvision5\SharedPlugs.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060020: Last Updated: Fri Jan 19 15:03:59 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060020: Last Updated: Mon Jan 29 11:06:33 2018
 <BR><P>
 <H3>Maximum Stack Usage =       1040 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1199,8 +1199,8 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_thread_new
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffInit(_ringBuff*, unsigned char)
-<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
-<LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
+<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
 <LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calloc
 <LI><a href="#[263]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;operator new(unsigned)
 <LI><a href="#[185]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_atexit
@@ -1227,7 +1227,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_free_internal
 <LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_heap_descriptor
 </UL>
-<BR>[Called By]<UL><LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<BR>[Called By]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
 <LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;operator delete (void*)
 <LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fclose_internal
 <LI><a href="#[1b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__cxa_finalize
@@ -1240,7 +1240,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_ctype_table
 </UL>
-<BR>[Called By]<UL><LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_GetObjectItem
+<BR>[Called By]<UL><LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_GetObjectItem
 </UL>
 
 <P><STRONG><a name="[160]"></a>vsprintf</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, vsprintf.o(.text))
@@ -1280,11 +1280,11 @@ Global Symbols
 <LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
-<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
+<LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
 <LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initETH()
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkNetworkStatus()
 <LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
-<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
+<LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 <LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initServer()
 <LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::Stream__sub_object(const char*)
@@ -1557,12 +1557,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netif_status_callback(netif*)
 </UL>
 
-<P><STRONG><a name="[209]"></a>strlen</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, strlen.o(.text))
+<P><STRONG><a name="[206]"></a>strlen</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, strlen.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkNetworkStatus()
-<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
+<LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 <LI><a href="#[29e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dns_gethostbyname
 <LI><a href="#[289]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_renew
@@ -1574,7 +1574,7 @@ Global Symbols
 <P><STRONG><a name="[1f3]"></a>strncmp</STRONG> (Thumb, 150 bytes, Stack size 16 bytes, strncmp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = strncmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<BR>[Called By]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
 <LI><a href="#[1f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_value(cJSON*, const char*, const char**)
 <LI><a href="#[24b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::FileBase::lookup(const char*, unsigned)
 </UL>
@@ -1583,8 +1583,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lwip_recvfrom
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initOTA()
 <LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k64f_low_level_output
-<LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Update(_md5_std_ctx*, unsigned char*, unsigned)
-<LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Update(_md5_std_ctx*, unsigned char*, unsigned)
+<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
 <LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pbuf_copy_partial
 <LI><a href="#[29e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dns_gethostbyname
 <LI><a href="#[2de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ip_output_if_opt
@@ -1604,7 +1604,7 @@ Global Symbols
 <P><STRONG><a name="[18c]"></a>__aeabi_memset</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, aeabi_memset.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[18d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<BR>[Called By]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
 </UL>
 
 <P><STRONG><a name="[158]"></a>__aeabi_memclr</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memclr.o(.text))
@@ -1628,7 +1628,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EthernetInterface::init()
 <LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 <LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgTransceiverHandle()
-<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
+<LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 <LI><a href="#[200]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgRecvHandle()
 <LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tcp_alloc
@@ -1645,10 +1645,11 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memclr
 </UL>
 
-<P><STRONG><a name="[212]"></a>strcmp</STRONG> (Thumb, 128 bytes, Stack size 0 bytes, strcmpv7m.o(.text))
+<P><STRONG><a name="[209]"></a>strcmp</STRONG> (Thumb, 128 bytes, Stack size 0 bytes, strcmpv7m.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[180]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_open
 <LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initETH()
 <LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
+<LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 <LI><a href="#[29e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dns_gethostbyname
 <LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_get_lc_numeric
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_get_lc_ctype
@@ -1842,8 +1843,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_str
 </UL>
-<BR>[Called By]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_string
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char
+<BR>[Called By]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char
+<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_string
 </UL>
 
 <P><STRONG><a name="[136]"></a>_printf_char</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, _printf_char.o(.text))
@@ -2755,17 +2756,17 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 </UL>
 
-<P><STRONG><a name="[206]"></a>erase_sector(int)</STRONG> (Thumb, 104 bytes, Stack size 0 bytes, freescaleiap.o(i._Z12erase_sectori))
+<P><STRONG><a name="[208]"></a>erase_sector(int)</STRONG> (Thumb, 104 bytes, Stack size 0 bytes, freescaleiap.o(i._Z12erase_sectori))
 <BR><BR>[Called By]<UL><LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initOTA()
-<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
-<LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
+<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 </UL>
 
-<P><STRONG><a name="[227]"></a>md5Transform(unsigned*, unsigned char*)</STRONG> (Thumb, 1710 bytes, Stack size 280 bytes, md5std.o(i._Z12md5TransformPjPh))
+<P><STRONG><a name="[223]"></a>md5Transform(unsigned*, unsigned char*)</STRONG> (Thumb, 1710 bytes, Stack size 280 bytes, md5std.o(i._Z12md5TransformPjPh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 280<LI>Call Chain = md5Transform(unsigned*, unsigned char*)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Update(_md5_std_ctx*, unsigned char*, unsigned)
+<BR>[Called By]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Update(_md5_std_ctx*, unsigned char*, unsigned)
 </UL>
 
 <P><STRONG><a name="[1fb]"></a>ringBuffInit(_ringBuff*, unsigned char)</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, ringbuffer.o(i._Z12ringBuffInitP9_ringBuffh))
@@ -2775,7 +2776,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
+<BR>[Called By]<UL><LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
 </UL>
 
 <P><STRONG><a name="[1ff]"></a>ringBuffPush(_ringBuff*, unsigned char)</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, ringbuffer.o(i._Z12ringBuffPushP9_ringBuffh))
@@ -2798,33 +2799,34 @@ Global Symbols
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 
-<P><STRONG><a name="[203]"></a>msgSendHandle(_msgId)</STRONG> (Thumb, 736 bytes, Stack size 112 bytes, main.o(i._Z13msgSendHandle6_msgId))
-<BR><BR>[Stack]<UL><LI>Max Depth = 904 + Unknown Stack Size
+<P><STRONG><a name="[203]"></a>msgSendHandle(_msgId)</STRONG> (Thumb, 808 bytes, Stack size 104 bytes, main.o(i._Z13msgSendHandle6_msgId))
+<BR><BR>[Stack]<UL><LI>Max Depth = 896 + Unknown Stack Size
 <LI>Call Chain = msgSendHandle(_msgId) &rArr; TCPSocketConnection::send(char*, int) &rArr; lwip_send &rArr; lwip_sendto &rArr;  lwip_send (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
-<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
+<BR>[Calls]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
+<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
 <LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_crc16(char*, unsigned)
 <LI><a href="#[1f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateCode()
-<LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;program_flash(int, char*, unsigned)
-<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erase_sector(int)
+<LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;program_flash(int, char*, unsigned)
+<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erase_sector(int)
 <LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffIsEmpty(_ringBuff*)
 <LI><a href="#[205]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffPop(_ringBuff*)
+<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 <LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgTransceiverHandle()
 </UL>
 
-<P><STRONG><a name="[207]"></a>program_flash(int, char*, unsigned)</STRONG> (Thumb, 390 bytes, Stack size 24 bytes, freescaleiap.o(i._Z13program_flashiPcj))
+<P><STRONG><a name="[20a]"></a>program_flash(int, char*, unsigned)</STRONG> (Thumb, 390 bytes, Stack size 24 bytes, freescaleiap.o(i._Z13program_flashiPcj))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = program_flash(int, char*, unsigned)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initOTA()
-<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
-<LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
+<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 </UL>
 
@@ -2833,7 +2835,7 @@ Global Symbols
 <LI>Call Chain = setPortStatus(unsigned char, _portStatus) &rArr; mbed::Stream::printf(const char*, ...) &rArr; fflush &rArr; _do_fflush &rArr; _fflush &rArr; _writebuf &rArr; _sys_write &rArr; serial_init &rArr;  BOARD_BootClockRUN (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
-<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
+<LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 <LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
@@ -2856,7 +2858,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initOTA()
 <LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
-<LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 <LI><a href="#[1ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initServer()
 </UL>
@@ -2866,7 +2868,7 @@ Global Symbols
 <LI>Call Chain = oneSecondThread(const void*) &rArr; mbed::Stream::printf(const char*, ...) &rArr; fflush &rArr; _do_fflush &rArr; _fflush &rArr; _writebuf &rArr; _sys_write &rArr; serial_init &rArr;  BOARD_BootClockRUN (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
-<LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Thread::wait(unsigned)
+<LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Thread::wait(unsigned)
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main.o(i.main)
 </UL>
@@ -2881,14 +2883,14 @@ Global Symbols
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 </UL>
 
-<P><STRONG><a name="[20e]"></a>cmdMsgRespHandle(_msgId)</STRONG> (Thumb, 480 bytes, Stack size 80 bytes, main.o(i._Z16cmdMsgRespHandle6_msgId))
+<P><STRONG><a name="[20f]"></a>cmdMsgRespHandle(_msgId)</STRONG> (Thumb, 480 bytes, Stack size 80 bytes, main.o(i._Z16cmdMsgRespHandle6_msgId))
 <BR><BR>[Stack]<UL><LI>Max Depth = 872 + Unknown Stack Size
 <LI>Call Chain = cmdMsgRespHandle(_msgId) &rArr; TCPSocketConnection::send(char*, int) &rArr; lwip_send &rArr; lwip_sendto &rArr;  lwip_send (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
+<BR>[Calls]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
 <LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
@@ -2899,17 +2901,17 @@ Global Symbols
 <LI>Call Chain = parseRecvMsgInfo(char*) &rArr; cmdMsgRespHandle(_msgId) &rArr; TCPSocketConnection::send(char*, int) &rArr; lwip_send &rArr; lwip_sendto &rArr;  lwip_send (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
-<LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Parse
-<LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_GetObjectItem
+<LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Parse
+<LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_GetObjectItem
 <LI><a href="#[213]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_GetArraySize
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_GetArrayItem
 <LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Delete
 <LI><a href="#[1fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffIsFull(_ringBuff*)
 <LI><a href="#[1fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setPortStatus(unsigned char, _portStatus)
 <LI><a href="#[1ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffPush(_ringBuff*, unsigned char)
-<LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
-<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
-<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
+<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
+<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
@@ -2919,23 +2921,23 @@ Global Symbols
 
 <P><STRONG><a name="[216]"></a>checkNetworkStatus()</STRONG> (Thumb, 216 bytes, Stack size 88 bytes, main.o(i._Z18checkNetworkStatusv), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::connect(const char*, int)
-<LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
-<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
+<LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
+<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
 <LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
-<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
-<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
+<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 
-<P><STRONG><a name="[211]"></a>parseBincodeBuffer(char*)</STRONG> (Thumb, 588 bytes, Stack size 72 bytes, main.o(i._Z18parseBincodeBufferPc))
+<P><STRONG><a name="[212]"></a>parseBincodeBuffer(char*)</STRONG> (Thumb, 588 bytes, Stack size 72 bytes, main.o(i._Z18parseBincodeBufferPc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 704 + Unknown Stack Size
 <LI>Call Chain = parseBincodeBuffer(char*) &rArr; wait &rArr; us_ticker_read &rArr; us_ticker_init &rArr; BOARD_BootClockRUN &rArr; CLOCK_BootToPeeMode &rArr; CLOCK_SetPbeMode &rArr; __aeabi_assert &rArr; __assert_puts &rArr; fflush &rArr; _do_fflush &rArr; _fflush &rArr; _writebuf &rArr; _sys_write &rArr; serial_init &rArr;  BOARD_BootClockRUN (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_crc16(char*, unsigned)
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initOTA()
-<LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;program_flash(int, char*, unsigned)
-<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erase_sector(int)
+<LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;program_flash(int, char*, unsigned)
+<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erase_sector(int)
 <LI><a href="#[218]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait
 <LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;free
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
@@ -2964,42 +2966,65 @@ Global Symbols
 <LI><a href="#[221]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EthernetInterface::getMACAddress()
 <LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EthernetInterface::getIPAddress()
 <LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
-<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
+<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 <LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0sscanf
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 </UL>
 
+<P><STRONG><a name="[225]"></a>md5Init(_md5_std_ctx*)</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, md5std.o(i._Z7md5InitP12_md5_std_ctx))
+<BR><BR>[Called By]<UL><LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
+</UL>
+
+<P><STRONG><a name="[222]"></a>md5Update(_md5_std_ctx*, unsigned char*, unsigned)</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, md5std.o(i._Z9md5UpdateP12_md5_std_ctxPhj))
+<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = md5Update(_md5_std_ctx*, unsigned char*, unsigned) &rArr; md5Transform(unsigned*, unsigned char*)
+</UL>
+<BR>[Calls]<UL><LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Transform(unsigned*, unsigned char*)
+<LI><a href="#[1df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+</UL>
+<BR>[Called By]<UL><LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Final(_md5_std_ctx*, unsigned char*)
+<LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
+</UL>
+
+<P><STRONG><a name="[101]"></a>mbed::FileHandle::lock()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, retarget.o(i._ZN4mbed10FileHandle4lockEv))
+<BR>[Address Reference Count : 3]<UL><LI> retarget.o(.constdata__ZTVN4mbed10FileHandleE)
+<LI> FileLike.o(.constdata__ZTVN4mbed8FileLikeE)
+<LI> Stream.o(.constdata__ZTVN4mbed6StreamE)
+</UL>
+<P><STRONG><a name="[102]"></a>mbed::FileHandle::unlock()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, retarget.o(i._ZN4mbed10FileHandle6unlockEv))
+<BR>[Address Reference Count : 3]<UL><LI> retarget.o(.constdata__ZTVN4mbed10FileHandleE)
+<LI> FileLike.o(.constdata__ZTVN4mbed8FileLikeE)
+<LI> Stream.o(.constdata__ZTVN4mbed6StreamE)
+</UL>
+<P><STRONG><a name="[103]"></a>mbed::SerialBase::lock()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, SerialBase.o(i._ZN4mbed10SerialBase4lockEv))
+<BR>[Address Reference Count : 1]<UL><LI> SerialBase.o(.constdata__ZTVN4mbed10SerialBaseE)
+</UL>
 <P><STRONG><a name="[219]"></a>initOTA()</STRONG> (Thumb, 312 bytes, Stack size 48 bytes, ota.o(i._Z7initOTAv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 616 + Unknown Stack Size
 <LI>Call Chain = initOTA() &rArr; mbed::Stream::printf(const char*, ...) &rArr; fflush &rArr; _do_fflush &rArr; _fflush &rArr; _writebuf &rArr; _sys_write &rArr; serial_init &rArr;  BOARD_BootClockRUN (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_crc16(char*, unsigned)
-<LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;program_flash(int, char*, unsigned)
-<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erase_sector(int)
+<LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;program_flash(int, char*, unsigned)
+<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erase_sector(int)
 <LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[1df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
-<LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
 </UL>
 
-<P><STRONG><a name="[223]"></a>md5Init(_md5_std_ctx*)</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, md5std.o(i._Z7md5InitP12_md5_std_ctx))
-<BR><BR>[Called By]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
-</UL>
-
-<P><STRONG><a name="[222]"></a>initPlug()</STRONG> (Thumb, 340 bytes, Stack size 144 bytes, main.o(i._Z8initPlugv))
+<P><STRONG><a name="[224]"></a>initPlug()</STRONG> (Thumb, 340 bytes, Stack size 144 bytes, main.o(i._Z8initPlugv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 720 + Unknown Stack Size
 <LI>Call Chain = initPlug() &rArr; ringBuffInit(_ringBuff*, unsigned char) &rArr; mbed::Stream::printf(const char*, ...) &rArr; fflush &rArr; _do_fflush &rArr; _fflush &rArr; _writebuf &rArr; _sys_write &rArr; serial_init &rArr;  BOARD_BootClockRUN (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
-<LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;program_flash(int, char*, unsigned)
-<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erase_sector(int)
-<LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Update(_md5_std_ctx*, unsigned char*, unsigned)
-<LI><a href="#[225]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Final(_md5_std_ctx*, unsigned char*)
-<LI><a href="#[223]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Init(_md5_std_ctx*)
+<LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;program_flash(int, char*, unsigned)
+<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;erase_sector(int)
+<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Update(_md5_std_ctx*, unsigned char*, unsigned)
+<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Final(_md5_std_ctx*, unsigned char*)
+<LI><a href="#[225]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Init(_md5_std_ctx*)
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffInit(_ringBuff*, unsigned char)
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;malloc
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
@@ -3007,35 +3032,25 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 </UL>
 
-<P><STRONG><a name="[226]"></a>initPort()</STRONG> (Thumb, 134 bytes, Stack size 8 bytes, plug.o(i._Z8initPortv))
+<P><STRONG><a name="[227]"></a>initPort()</STRONG> (Thumb, 134 bytes, Stack size 8 bytes, plug.o(i._Z8initPortv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 320 + Unknown Stack Size
 <LI>Call Chain = initPort() &rArr; gpio_write &rArr; mbed_assert_internal &rArr;  mbed_die (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
+<BR>[Calls]<UL><LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 </UL>
 
-<P><STRONG><a name="[225]"></a>md5Final(_md5_std_ctx*, unsigned char*)</STRONG> (Thumb, 132 bytes, Stack size 24 bytes, md5std.o(i._Z8md5FinalP12_md5_std_ctxPh))
+<P><STRONG><a name="[226]"></a>md5Final(_md5_std_ctx*, unsigned char*)</STRONG> (Thumb, 132 bytes, Stack size 24 bytes, md5std.o(i._Z8md5FinalP12_md5_std_ctxPh))
 <BR><BR>[Stack]<UL><LI>Max Depth = 328<LI>Call Chain = md5Final(_md5_std_ctx*, unsigned char*) &rArr; md5Update(_md5_std_ctx*, unsigned char*, unsigned) &rArr; md5Transform(unsigned*, unsigned char*)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Update(_md5_std_ctx*, unsigned char*, unsigned)
+<BR>[Calls]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Update(_md5_std_ctx*, unsigned char*, unsigned)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
-</UL>
-
-<P><STRONG><a name="[224]"></a>md5Update(_md5_std_ctx*, unsigned char*, unsigned)</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, md5std.o(i._Z9md5UpdateP12_md5_std_ctxPhj))
-<BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = md5Update(_md5_std_ctx*, unsigned char*, unsigned) &rArr; md5Transform(unsigned*, unsigned char*)
-</UL>
-<BR>[Calls]<UL><LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Transform(unsigned*, unsigned char*)
-<LI><a href="#[1df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-</UL>
-<BR>[Called By]<UL><LI><a href="#[225]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;md5Final(_md5_std_ctx*, unsigned char*)
-<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
+<BR>[Called By]<UL><LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
 </UL>
 
 <P><STRONG><a name="[232]"></a>TimeInterval::TimeInterval(unsigned)</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, socket.o(i._ZN12TimeIntervalC1Ej))
-<BR><BR>[Called By]<UL><LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
+<BR><BR>[Called By]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
 <LI><a href="#[201]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::receive_all(char*, int)
 </UL>
 
@@ -3092,7 +3107,7 @@ Global Symbols
 <LI><a href="#[200]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgRecvHandle()
 </UL>
 
-<P><STRONG><a name="[20a]"></a>TCPSocketConnection::send(char*, int)</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, tcpsocketconnection.o(i._ZN19TCPSocketConnection4sendEPci))
+<P><STRONG><a name="[207]"></a>TCPSocketConnection::send(char*, int)</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, tcpsocketconnection.o(i._ZN19TCPSocketConnection4sendEPci))
 <BR><BR>[Stack]<UL><LI>Max Depth = 792 + Unknown Stack Size
 <LI>Call Chain = TCPSocketConnection::send(char*, int) &rArr; lwip_send &rArr; lwip_sendto &rArr;  lwip_send (Cycle)
 </UL>
@@ -3102,7 +3117,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkNetworkStatus()
-<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
+<LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 </UL>
 
@@ -3111,7 +3126,7 @@ Global Symbols
 <LI>Call Chain = TCPSocketConnection::connect(const char*, int) &rArr; Endpoint::set_address(const char*, int) &rArr; lwip_gethostbyname &rArr; netconn_gethostbyname &rArr; sys_arch_sem_wait &rArr; us_ticker_read &rArr; us_ticker_init &rArr; BOARD_BootClockRUN &rArr; CLOCK_BootToPeeMode &rArr; CLOCK_SetPbeMode &rArr; __aeabi_assert &rArr; __assert_puts &rArr; fflush &rArr; _do_fflush &rArr; _fflush &rArr; _writebuf &rArr; _sys_write &rArr; serial_init &rArr;  BOARD_BootClockRUN (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lwip_connect
-<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
+<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
 <LI><a href="#[237]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::init_socket(int)
 <LI><a href="#[238]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Endpoint::set_address(const char*, int)
 </UL>
@@ -3147,16 +3162,6 @@ Global Symbols
 <BR>[Address Reference Count : 2]<UL><LI> retarget.o(.constdata__ZTVN4mbed10FileHandleE)
 <LI> FileLike.o(.constdata__ZTVN4mbed8FileLikeE)
 </UL>
-<P><STRONG><a name="[101]"></a>mbed::FileHandle::lock()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, retarget.o(i._ZN4mbed10FileHandle4lockEv))
-<BR>[Address Reference Count : 3]<UL><LI> retarget.o(.constdata__ZTVN4mbed10FileHandleE)
-<LI> FileLike.o(.constdata__ZTVN4mbed8FileLikeE)
-<LI> Stream.o(.constdata__ZTVN4mbed6StreamE)
-</UL>
-<P><STRONG><a name="[102]"></a>mbed::FileHandle::unlock()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, retarget.o(i._ZN4mbed10FileHandle6unlockEv))
-<BR>[Address Reference Count : 3]<UL><LI> retarget.o(.constdata__ZTVN4mbed10FileHandleE)
-<LI> FileLike.o(.constdata__ZTVN4mbed8FileLikeE)
-<LI> Stream.o(.constdata__ZTVN4mbed6StreamE)
-</UL>
 <P><STRONG><a name="[3cf]"></a>mbed::FileHandle::~FileHandle()</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, retarget.o(i._ZN4mbed10FileHandleD2Ev), UNUSED)
 
 <P><STRONG><a name="[100]"></a>mbed::FileHandle::~FileHandle__sub_object()</STRONG> (Thumb, 38 bytes, Stack size 4 bytes, retarget.o(i._ZN4mbed10FileHandleD2Ev))
@@ -3185,9 +3190,6 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 </UL>
 
-<P><STRONG><a name="[103]"></a>mbed::SerialBase::lock()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, SerialBase.o(i._ZN4mbed10SerialBase4lockEv))
-<BR>[Address Reference Count : 1]<UL><LI> SerialBase.o(.constdata__ZTVN4mbed10SerialBaseE)
-</UL>
 <P><STRONG><a name="[104]"></a>mbed::SerialBase::unlock()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, SerialBase.o(i._ZN4mbed10SerialBase6unlockEv))
 <BR>[Address Reference Count : 1]<UL><LI> SerialBase.o(.constdata__ZTVN4mbed10SerialBaseE)
 </UL>
@@ -3277,13 +3279,13 @@ Global Symbols
 <LI><a href="#[1fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffIsFull(_ringBuff*)
 <LI><a href="#[1fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setPortStatus(unsigned char, _portStatus)
 <LI><a href="#[1fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffInit(_ringBuff*, unsigned char)
-<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
+<LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
 <LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initETH()
 <LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgTransceiverHandle()
-<LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkNetworkStatus()
 <LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
-<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
+<LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cmdMsgRespHandle(_msgId)
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oneSecondThread(const void*)
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 <LI><a href="#[200]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgRecvHandle()
@@ -3326,7 +3328,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = mbed::FileBase::lookup(const char*, unsigned) &rArr; strncmp
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
-<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[251]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::FilePath::FilePath(const char*)
 </UL>
@@ -3418,7 +3420,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 </UL>
 
-<P><STRONG><a name="[20c]"></a>rtos::Thread::wait(unsigned)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, thread.o(i._ZN4rtos6Thread4waitEj))
+<P><STRONG><a name="[20d]"></a>rtos::Thread::wait(unsigned)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, thread.o(i._ZN4rtos6Thread4waitEj))
 <BR><BR>[Calls]<UL><LI><a href="#[256]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osDelay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;oneSecondThread(const void*)
@@ -3431,7 +3433,7 @@ Global Symbols
 <LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EthernetInterface::init()
 </UL>
 
-<P><STRONG><a name="[20d]"></a>rtos::Semaphore::release()</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, semaphore.o(i._ZN4rtos9Semaphore7releaseEv))
+<P><STRONG><a name="[20e]"></a>rtos::Semaphore::release()</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, semaphore.o(i._ZN4rtos9Semaphore7releaseEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
 <LI>Call Chain = rtos::Semaphore::release() &rArr; osSemaphoreRelease &rArr; isr_sem_send &rArr; rt_psq_enq &rArr; os_error &rArr; error &rArr; exit &rArr;  fflush (Cycle)
 </UL>
@@ -3489,10 +3491,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lwip_select
 </UL>
-<BR>[Called By]<UL><LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
+<BR>[Called By]<UL><LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
 </UL>
 
-<P><STRONG><a name="[208]"></a>Socket::close(bool)</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, socket.o(i._ZN6Socket5closeEb))
+<P><STRONG><a name="[20b]"></a>Socket::close(bool)</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, socket.o(i._ZN6Socket5closeEb))
 <BR><BR>[Stack]<UL><LI>Max Depth = 728 + Unknown Stack Size
 <LI>Call Chain = Socket::close(bool) &rArr; lwip_close &rArr; netconn_delete &rArr; tcpip_apimsg &rArr; sys_arch_sem_wait &rArr; us_ticker_read &rArr; us_ticker_init &rArr; BOARD_BootClockRUN &rArr; CLOCK_BootToPeeMode &rArr; CLOCK_SetPbeMode &rArr; __aeabi_assert &rArr; __assert_puts &rArr; fflush &rArr; _do_fflush &rArr; _fflush &rArr; _writebuf &rArr; _sys_write &rArr; serial_init &rArr;  BOARD_BootClockRUN (Cycle)
 </UL>
@@ -3789,7 +3791,7 @@ Global Symbols
 <LI><a href="#[24f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::FilePath::file()
 <LI><a href="#[24d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::FilePath::fileSystem()
 <LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;serial_init
-<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
+<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 <LI><a href="#[171]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0sscanf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[17f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_freopen_locked
@@ -3815,7 +3817,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Delete
 </UL>
-<BR>[Called By]<UL><LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Parse
+<BR>[Called By]<UL><LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Parse
 <LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Delete
 <LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
 </UL>
@@ -3828,7 +3830,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
 </UL>
 
-<P><STRONG><a name="[210]"></a>cJSON_GetObjectItem</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, cjson.o(i.cJSON_GetObjectItem))
+<P><STRONG><a name="[211]"></a>cJSON_GetObjectItem</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, cjson.o(i.cJSON_GetObjectItem))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = cJSON_GetObjectItem &rArr; tolower &rArr; __rt_ctype_table &rArr; __rt_locale
 </UL>
 <BR>[Calls]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tolower
@@ -3836,7 +3838,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
 </UL>
 
-<P><STRONG><a name="[20f]"></a>cJSON_Parse</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, cjson.o(i.cJSON_Parse))
+<P><STRONG><a name="[210]"></a>cJSON_Parse</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, cjson.o(i.cJSON_Parse))
 <BR><BR>[Stack]<UL><LI>Max Depth = 368<LI>Call Chain = cJSON_Parse &rArr; parse_value(cJSON*, const char*, const char**) &rArr;  parse_value(cJSON*, const char*, const char**) (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Delete
@@ -3949,7 +3951,7 @@ Global Symbols
 <LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pbuf_realloc
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_option_trailer
 <LI><a href="#[27e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_create_msg
-<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_fine_tmr
 <LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_coarse_tmr
@@ -3976,9 +3978,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[29f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ipaddr_addr
 <LI><a href="#[29c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dns_check_entry
-<LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
+<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 <LI><a href="#[1df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
-<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;do_gethostbyname
 </UL>
@@ -4290,7 +4292,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 352 + Unknown Stack Size
 <LI>Call Chain = gpio_init_out &rArr; gpio_init &rArr; pin_function &rArr; mbed_assert_internal &rArr;  mbed_die (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
+<BR>[Calls]<UL><LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
 <LI><a href="#[2cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init
 <LI><a href="#[2cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_dir
 </UL>
@@ -4307,7 +4309,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init_in
 </UL>
 
-<P><STRONG><a name="[20b]"></a>gpio_write</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, gpio_api.o(i.gpio_write))
+<P><STRONG><a name="[20c]"></a>gpio_write</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, gpio_api.o(i.gpio_write))
 <BR><BR>[Stack]<UL><LI>Max Depth = 312 + Unknown Stack Size
 <LI>Call Chain = gpio_write &rArr; mbed_assert_internal &rArr;  mbed_die (Cycle)
 </UL>
@@ -4316,7 +4318,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[1cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 <LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed_die
 <LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init_out
-<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPort()
+<LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPort()
 <LI><a href="#[1fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setPortStatus(unsigned char, _portStatus)
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkNetworkStatus()
 </UL>
@@ -4673,7 +4675,7 @@ Global Symbols
 <LI><a href="#[2fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netbuf_delete
 </UL>
 <BR>[Called By]<UL><LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::~Socket()
-<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
+<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
 </UL>
 
 <P><STRONG><a name="[239]"></a>lwip_connect</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, sockets.o(i.lwip_connect))
@@ -4760,7 +4762,7 @@ Global Symbols
 <LI><a href="#[313]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netconn_write
 </UL>
 <BR>[Called By]<UL><LI><a href="#[312]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lwip_sendto
-<LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
+<LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
 </UL>
 
 <P><STRONG><a name="[312]"></a>lwip_sendto</STRONG> (Thumb, 196 bytes, Stack size 40 bytes, sockets.o(i.lwip_sendto))
@@ -4784,7 +4786,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[317]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;netconn_shutdown
 </UL>
 <BR>[Called By]<UL><LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::~Socket()
-<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
+<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
 </UL>
 
 <P><STRONG><a name="[25c]"></a>lwip_socket</STRONG> (Thumb, 190 bytes, Stack size 24 bytes, sockets.o(i.lwip_socket))
@@ -4808,27 +4810,27 @@ Global Symbols
 <LI>Call Chain = $Super$$main &rArr; initETH() &rArr; EthernetInterface::init() &rArr; netif_add &rArr; tcp_abort &rArr; tcp_abandon &rArr; tcp_pcb_remove &rArr; tcp_output &rArr; tcp_send_empty_ack &rArr; ip_output &rArr; ip_output_if_opt &rArr; ip_frag &rArr; pbuf_alloc &rArr; mem_malloc &rArr; sys_mutex_unlock &rArr; error &rArr; exit &rArr;  fflush (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::connect(const char*, int)
-<LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
+<LI><a href="#[207]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::send(char*, int)
 <LI><a href="#[201]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TCPSocketConnection::receive_all(char*, int)
-<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
+<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::close(bool)
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Socket::set_blocking(bool, unsigned)
 <LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::Stream::printf(const char*, ...)
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_crc16(char*, unsigned)
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initOTA()
-<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
+<LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
 <LI><a href="#[252]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Thread::constructor(mbed::Callback&lang;void()&rang;, osPriority, unsigned, unsigned char*)
 <LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::SerialBase::baud(int)
-<LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPort()
+<LI><a href="#[227]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPort()
 <LI><a href="#[204]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffIsEmpty(_ringBuff*)
 <LI><a href="#[1fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffIsFull(_ringBuff*)
 <LI><a href="#[1fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setPortStatus(unsigned char, _portStatus)
 <LI><a href="#[1ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ringBuffPush(_ringBuff*, unsigned char)
-<LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
+<LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initPlug()
 <LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initETH()
 <LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseRecvMsgInfo(char*)
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;msgSendHandle(_msgId)
 <LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 <LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -4844,7 +4846,7 @@ Global Symbols
 <LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed_error_printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[245]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;serial_init
-<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
+<LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
 <LI><a href="#[27c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;core_util_critical_section_exit
 <LI><a href="#[27a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;core_util_critical_section_enter
 <LI><a href="#[2ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pin_function
@@ -4857,7 +4859,7 @@ Global Symbols
 <LI>Call Chain = mbed_die &rArr; gpio_init_out &rArr; gpio_init &rArr; pin_function &rArr; mbed_assert_internal &rArr;  mbed_die (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wait_ms
-<LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
+<LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_write
 <LI><a href="#[273]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gpio_init_out
 <LI><a href="#[27a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;core_util_critical_section_enter
 </UL>
@@ -5283,7 +5285,7 @@ Global Symbols
 <P><STRONG><a name="[256]"></a>osDelay</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, rt_cmsis.o(i.osDelay))
 <BR><BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eth_arch_enetif_init
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;k64f_phy_task
-<LI><a href="#[20c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Thread::wait(unsigned)
+<LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Thread::wait(unsigned)
 </UL>
 
 <P><STRONG><a name="[14e]"></a>osKernelInitialize</STRONG> (Thumb, 118 bytes, Stack size 16 bytes, rt_cmsis.o(i.osKernelInitialize))
@@ -5371,7 +5373,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;isr_sem_send
 </UL>
-<BR>[Called By]<UL><LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Semaphore::release()
+<BR>[Called By]<UL><LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Semaphore::release()
 <LI><a href="#[2a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sys_sem_signal
 </UL>
 
@@ -7260,7 +7262,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;us_ticker_read
 </UL>
-<BR>[Called By]<UL><LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
+<BR>[Called By]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parseBincodeBuffer(char*)
 </UL>
 
 <P><STRONG><a name="[31b]"></a>wait_ms</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, wait_api.o(i.wait_ms))
@@ -7275,7 +7277,7 @@ Global Symbols
 <P><STRONG><a name="[a8]"></a>_get_lc_ctype</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, lc_ctype_c.o(locale$$code))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = _get_lc_ctype
 </UL>
-<BR>[Calls]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
+<BR>[Calls]<UL><LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_lc_ctype_2
 </UL>
@@ -7284,7 +7286,7 @@ Global Symbols
 <P><STRONG><a name="[147]"></a>_get_lc_numeric</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, lc_numeric_c.o(locale$$code))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = _get_lc_numeric
 </UL>
-<BR>[Calls]<UL><LI><a href="#[212]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
+<BR>[Calls]<UL><LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcmp
 </UL>
 <BR>[Called By]<UL><LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_lc_numeric_2
 </UL>
@@ -7498,7 +7500,7 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
 <LI>Call Chain = tcpip_init_done(void*) &rArr; rtos::Semaphore::release() &rArr; osSemaphoreRelease &rArr; isr_sem_send &rArr; rt_psq_enq &rArr; os_error &rArr; error &rArr; exit &rArr;  fflush (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Semaphore::release()
+<BR>[Calls]<UL><LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Semaphore::release()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ethernetinterface.o(i._ZN17EthernetInterface4initEv)
 </UL>
@@ -7506,7 +7508,7 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
 <LI>Call Chain = netif_link_callback(netif*) &rArr; rtos::Semaphore::release() &rArr; osSemaphoreRelease &rArr; isr_sem_send &rArr; rt_psq_enq &rArr; os_error &rArr; error &rArr; exit &rArr;  fflush (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Semaphore::release()
+<BR>[Calls]<UL><LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Semaphore::release()
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ethernetinterface.o(i._ZN17EthernetInterface4initEv)
 </UL>
@@ -7515,7 +7517,7 @@ Local Symbols
 <LI>Call Chain = netif_status_callback(netif*) &rArr; rtos::Semaphore::release() &rArr; osSemaphoreRelease &rArr; isr_sem_send &rArr; rt_psq_enq &rArr; os_error &rArr; error &rArr; exit &rArr;  fflush (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[21b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ipaddr_ntoa
-<LI><a href="#[20d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Semaphore::release()
+<LI><a href="#[20e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtos::Semaphore::release()
 <LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strcpy
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> ethernetinterface.o(i._ZN17EthernetInterface4initEv)
@@ -7795,7 +7797,7 @@ Local Symbols
 <LI><a href="#[1f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[1f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strncmp
 </UL>
-<BR>[Called By]<UL><LI><a href="#[20f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Parse
+<BR>[Called By]<UL><LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cJSON_Parse
 <LI><a href="#[1f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_value(cJSON*, const char*, const char**)
 </UL>
 
@@ -7869,7 +7871,7 @@ Local Symbols
 <LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pbuf_realloc
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_option_trailer
 <LI><a href="#[27e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_create_msg
-<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_fine_tmr
 <LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_coarse_tmr
@@ -7917,7 +7919,7 @@ Local Symbols
 <LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pbuf_realloc
 <LI><a href="#[27f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_option_trailer
 <LI><a href="#[27e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_create_msg
-<LI><a href="#[209]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[206]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_fine_tmr
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dhcp_recv

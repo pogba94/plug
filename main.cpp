@@ -22,6 +22,7 @@
 #include "ringBuffer.h"
 #include "md5Std.h"
 
+
 #if FuncCfg_WatchDog
 	#include "WatchDog.h"
 #endif
@@ -35,7 +36,13 @@ const char* DEFAULT_SERVER_IP = "192.168.0.100";
 const int DEFAULT_SERVER_PORT = 49999;
 #endif
 
-const char* VERSION_DESCRIBTION = "Firmware of shared plug,run with mbed os 2.0\r\nVersion:V1.0.0\r\nDate:2018-01-17\r\n";
+const char* VERSION_DESCRIBTION = "Firmware of shared plug,run with mbed os 2.0\r\nVersion:V1.0.0\r\nDate:2018-01-29\r\n";
+#if FuncCfg_VerifyFW
+#define  CHECK_CODE          "SHARED_PLUG_FW"
+const char mytext[] __attribute__((at(0x10000)))= CHECK_CODE;
+#define  VERIFY_ADDRESS       (OTA_CODE_START_ADDRESS+0x10000-BOOTLOADER_SIZE)
+#endif
+
 /* Debug UART */
 Serial pc(USBTX, USBRX);
 /* GPIO Definition */
@@ -784,7 +791,7 @@ void msgSendHandle(MsgId_t sendMsgId)
 		}
 	}else if(sendMsgId == reqOTA){
 		#if FuncCfg_DebugImfo
-		pc.printf("SectorNum:%d,curSector:%d\r\n",OTAInfo.sectorNum,OTAInfo.curSector);
+		pc.printf("SectorNum:%d,curSector:%d\r\n",OTAInfo.sectorNum,OTAInfo.curSector+1);
 		#endif
 		if(OTAInfo.curPackIndex < OTAInfo.totalPackNum){
 			if(OTAInfo.curPackIndex + 1 == OTAInfo.totalPackNum){
@@ -809,28 +816,44 @@ void msgSendHandle(MsgId_t sendMsgId)
 			pc.printf("OTA code crc:%x checksum:%x\r\n",crc16,OTAInfo.checkSum);
 			#endif
 			if(crc16 == OTAInfo.checkSum){//Check OK
-				char* cData = (char*)VERSION_STR_ADDRESS;
-				crc16 = calculate_crc16((char*)OTA_CODE_START_ADDRESS,CODE_SIZE);
 				#if FuncCfg_DebugImfo
-				pc.printf("Download successfully!,Update OTA checksum infomation!Current CRC16:%04x\r\n",crc16);
+					pc.printf("Download successfully!,Update OTA checksum infomation!Current CRC16:%04x\r\n",crc16);
 				#endif
-				memset(buf,0,VERSION_STR_LEN);
-				tempBuffer[0] = cData[0];
-				tempBuffer[1] = cData[1];
-				tempBuffer[2] = (crc16 >> 8) & 0xff; //Update OTA Checksum
-				tempBuffer[3] = crc16 & 0xff;
+				#if FuncCfg_VerifyFW
+//        char* verifyAddr = (char*)VERIFY_ADDRESS;
+				if(strcmp((char*)CHECK_CODE,(char*)VERIFY_ADDRESS)== NULL){
+					#if FuncCfg_DebugImfo
+					pc.printf("Check firmware successfully!\r\n");
+					#endif
+					char* cData = (char*)VERSION_STR_ADDRESS;
+					crc16 = calculate_crc16((char*)OTA_CODE_START_ADDRESS,CODE_SIZE);
+					
+					memset(buf,0,VERSION_STR_LEN);
+					tempBuffer[0] = cData[0];
+					tempBuffer[1] = cData[1];
+					tempBuffer[2] = (crc16 >> 8) & 0xff; //Update OTA Checksum
+					tempBuffer[3] = crc16 & 0xff;
 
-				erase_sector(VERSION_STR_ADDRESS);
-				program_flash(VERSION_STR_ADDRESS,tempBuffer,SECTOR_SIZE);
-				tcpsocket.close();//notify to server!
-				updateCode(); //begin to update code !
+					erase_sector(VERSION_STR_ADDRESS);
+					program_flash(VERSION_STR_ADDRESS,tempBuffer,SECTOR_SIZE);
+					tcpsocket.close();//notify to server!
+					updateCode(); //begin to update code !
+				}else{
+					#if FuncCfg_DebugImfo
+					pc.printf("This Firmware is illegal!Stop update and Initialize OTA partition!\r\n");
+					#endif
+					plug.deviceStatus = OTA_FAIL;
+					eventHandle.deviceStatusUpdateFlag = true; //notify to server!
+				}
+					#endif
 			}else{//check error
-				#if FuncCfg_DebufImfo
+				#if FuncCfg_DebugImfo
 				pc.printf("Checksum is different,Download fail!\r\n");
 				#endif
 				plug.deviceStatus = OTA_FAIL;
 				eventHandle.deviceStatusUpdateFlag = true; //notify to server!
 			}
+			return;
 		}
 	}
 	len = strlen(socketInfo.outBuffer);
@@ -942,7 +965,8 @@ int main(void)
 	#endif
 	pc.baud(115200); //initialize the PC interface
 	pc.printf("%s\r\n",VERSION_DESCRIBTION);
-
+//	pc.printf("address=%x\r\n",VERSION_DESCRIBTION);
+	
 	initPort();
 	initETH();
 	initServer();

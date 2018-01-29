@@ -109,6 +109,3 @@ void initPort(void)
 	relay14 = OFF;
 	relay15 = OFF;
 }
-
-
-

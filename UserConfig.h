@@ -11,6 +11,7 @@
 #define   FuncCfg_Led              		(1)  
 #define   FuncCfg_Ethernet         		(1)
 #define   FuncCfg_DebugImfo           (1)
+#define   FuncCfg_VerifyFW            (1)
 #define   DEBUG_MODE                  (0)
 /*-------Parameter Configure------------------------------------------*/
 #define    RESET_TIMER                 120
@@ -21,7 +22,7 @@
 #define    MSG_RESEND_PERIOD           5
 #define    SOCKET_IN_BUFFER_SIZE       (4096+256)
 #define    SOCKET_OUT_BUFFER_SIZE      (256)
-#define    RING_BUFF_SIZE              (16)
+#define    RING_BUFF_SIZE              (32)
 #define    MAX_CHARGING_TIME           (480)    //Unit:min
 /* OTA pack definition */
 #define OTA_BLOCKOFFSET_POS 6
