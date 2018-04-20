@@ -1,0 +1,17 @@
+--cpu Cortex-M4.fp
+".\build\uvision5\bootloader.o"
+".\build\uvision5\main.o"
+".\build\uvision5\lib_crc16.o"
+".\build\uvision5\freescaleiap.o"
+"mbed/TARGET_K64F/TOOLCHAIN_ARM_STD/board.o"
+"mbed/TARGET_K64F/TOOLCHAIN_ARM_STD/cmsis_nvic.o"
+"mbed/TARGET_K64F/TOOLCHAIN_ARM_STD/mbed.ar"
+"mbed/TARGET_K64F/TOOLCHAIN_ARM_STD/mbed_overrides.o"
+"mbed/TARGET_K64F/TOOLCHAIN_ARM_STD/retarget.o"
+"mbed/TARGET_K64F/TOOLCHAIN_ARM_STD/startup_MK64F12.o"
+"mbed/TARGET_K64F/TOOLCHAIN_ARM_STD/sys.o"
+"mbed/TARGET_K64F/TOOLCHAIN_ARM_STD/system_MK64F12.o"
+--scatter "mbed/TARGET_K64F/TOOLCHAIN_ARM_STD/MK64F.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\build\Bootloader_K64F_20160926.map" -o .\build\uvision5\Bootloader_K64F_20160926.axf

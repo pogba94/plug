@@ -1,0 +1,441 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.16.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: ora ang, 123, LIC=DSNMM-XPZW5-IL1CB-2LCCL-EMB3N-M89AR
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.16.0.0
+Toolchain Path:  F:\install\softwares\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 (build 20)
+Assembler:       Armasm.exe V5.06 (build 20)
+Linker/Locator:  ArmLink.exe V5.06 (build 20)
+Library Manager: ArmAr.exe V5.06 (build 20)
+Hex Converter:   FromElf.exe V5.06 (build 20)
+CPU DLL:         SARMCM3.DLL V5.16.0.0
+Dialog DLL:      DCM.DLL V1.13.2.0
+Target DLL:      Segger\JL2CM3.dll V2.99.15.2
+Dialog DLL:      TCM.DLL V1.14.5.0
+ 
+<h2>Project:</h2>
+I:\Project\SharedPlug\APP\SharedPlugs.uvprojx
+Project File Date:  01/15/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 (build 20)', folder: 'F:\install\softwares\Keil_v5\ARM\ARMCC\Bin'
+Build target 'SharedPlugs'
+compiling ota.cpp...
+compiling FreescaleIAP.cpp...
+compiling Socket.cpp...
+compiling TCPSocketConnection.cpp...
+compiling Endpoint.cpp...
+compiling TCPSocketServer.cpp...
+compiling HAL_CM.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/HAL_CM.c: 4 warnings, 0 errors
+compiling rt_Event.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Event.c: 4 warnings, 0 errors
+compiling rt_List.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_List.c: 4 warnings, 0 errors
+compiling rt_Mailbox.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mailbox.c(112): warning:  #3731-D: intrinsic is deprecated
+      
+t_inc (&p_MCB->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mailbox.c(112): warning:  #3731-D: intrinsic is deprecated
+      
+t_inc (&p_MCB->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mailbox.c(151): warning:  #3731-D: intrinsic is deprecated
+        
+t_dec (&p_MCB->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mailbox.c(151): warning:  #3731-D: intrinsic is deprecated
+        
+t_dec (&p_MCB->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mailbox.c(214): warning:  #3731-D: intrinsic is deprecated
+      
+t_dec (&p_MCB->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mailbox.c(214): warning:  #3731-D: intrinsic is deprecated
+      
+t_dec (&p_MCB->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mailbox.c(253): warning:  #3731-D: intrinsic is deprecated
+        
+t_inc (&p_CB->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mailbox.c(253): warning:  #3731-D: intrinsic is deprecated
+        
+t_inc (&p_CB->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mailbox.c(280): warning:  #3731-D: intrinsic is deprecated
+        
+t_inc (&p_CB->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mailbox.c(280): warning:  #3731-D: intrinsic is deprecated
+        
+t_inc (&p_CB->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mailbox.c: 14 warnings, 0 errors
+compiling rt_MemBox.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_MemBox.c(108): warning:  #3731-D: intrinsic is deprecated
+      if ((free = (void **)__ldrex(&((P_BM) box_mem)->free)) == 0U) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_MemBox.c(112): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex((U32)*free, &((P_BM) box_mem)->free));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_MemBox.c(160): warning:  #3731-D: intrinsic is deprecated
+      } while (*(void**)box != (void *)__ldrex(&((P_BM) box_mem)->free));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_MemBox.c(161): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex ((U32)box, &((P_BM) box_mem)->free));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_MemBox.c: 8 warnings, 0 errors
+compiling rt_Memory.c...
+compiling rt_Mutex.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Mutex.c: 4 warnings, 0 errors
+compiling rt_OsEventObserver.c...
+compiling rt_Robin.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Robin.c: 4 warnings, 0 errors
+compiling EthernetInterface.cpp...
+compiling rt_Semaphore.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Semaphore.c: 4 warnings, 0 errors
+compiling rt_CMSIS.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_CMSIS.c: 4 warnings, 0 errors
+compiling rt_Time.c...
+compiling rt_Task.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_Task.c: 4 warnings, 0 errors
+compiling rt_Timer.c...
+compiling rt_System.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_System.c(245): warning:  #3731-D: intrinsic is deprecated
+      
+t_dec (&os_psq->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_System.c(245): warning:  #3731-D: intrinsic is deprecated
+      
+t_dec (&os_psq->count);
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_System.c: 6 warnings, 0 errors
+compiling RTX_Conf_CM.c...
+assembling SVC_Table.S...
+compiling UDPSocket.cpp...
+compiling HAL_CM4.c...
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(209): warning:  #3731-D: intrinsic is deprecated
+      if ((cnt = __ldrex(count)) == size) {
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(212): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(cnt+1U, count));
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(214): warning:  #3731-D: intrinsic is deprecated
+      c2 = (cnt = __ldrex(first)) + 1U;
+mbed-rtos/rtx/TARGET_CORTEX_M/rt_HAL_CM.h(216): warning:  #3731-D: intrinsic is deprecated
+    } while (__strex(c2, first));
+mbed-rtos/rtx/TARGET_CORTEX_M/TARGET_RTOS_M4_M7/TOOLCHAIN_ARM/HAL_CM4.c: 4 warnings, 0 errors
+compiling hardware_init_MK64F12.c...
+compiling ringBuffer.cpp...
+compiling k64f_emac.c...
+compiling api_lib.c...
+compiling plug.cpp...
+Plugs\plug.cpp(68): warning:  #111-D: statement is unreachable
+  			case 0:return relay0.read();break;
+Plugs\plug.cpp(69): warning:  #111-D: statement is unreachable
+  			case 1:return relay1.read();break;
+Plugs\plug.cpp(70): warning:  #111-D: statement is unreachable
+  			case 2:return relay2.read();break;
+Plugs\plug.cpp(71): warning:  #111-D: statement is unreachable
+  			case 3:return relay3.read();break;
+Plugs\plug.cpp(72): warning:  #111-D: statement is unreachable
+  			case 4:return relay4.read();break;
+Plugs\plug.cpp(73): warning:  #111-D: statement is unreachable
+  			case 5:return relay5.read();break;
+Plugs\plug.cpp(74): warning:  #111-D: statement is unreachable
+  			case 6:return relay6.read();break;
+Plugs\plug.cpp(75): warning:  #111-D: statement is unreachable
+  			case 7:return relay7.read();break;
+Plugs\plug.cpp(76): warning:  #111-D: statement is unreachable
+  			case 8:return relay8.read();break;
+Plugs\plug.cpp(77): warning:  #111-D: statement is unreachable
+  			case 9:return relay9.read();break;
+Plugs\plug.cpp(78): warning:  #111-D: statement is unreachable
+  			case 10:return relay10.read();break;
+Plugs\plug.cpp(79): warning:  #111-D: statement is unreachable
+  			case 11:return relay11.read();break;
+Plugs\plug.cpp(80): warning:  #111-D: statement is unreachable
+  			case 12:return relay12.read();break;
+Plugs\plug.cpp(81): warning:  #111-D: statement is unreachable
+  			case 13:return relay13.read();break;
+Plugs\plug.cpp(82): warning:  #111-D: statement is unreachable
+  			case 14:return relay14.read();break;
+Plugs\plug.cpp(83): warning:  #111-D: statement is unreachable
+  			case 15:return relay15.read();break;
+Plugs\plug.cpp(86): warning:  #940-D: missing return statement at end of non-void function "getPortStatus"
+  }
+Plugs\plug.cpp(111): warning:  #1-D: last line of file ends without a newline
+  }
+Plugs\plug.cpp: 18 warnings, 0 errors
+compiling api_msg.c...
+compiling main.cpp...
+.\md5\md5Std.h(9): warning:  #1565-D: white space between backslash and newline in line splice ignored
+  #define FF(a,b,c,d,x,s,ac) \  
+.\md5\md5Std.h(10): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            { \  
+.\md5\md5Std.h(11): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += F(b,c,d) + x + ac; \  
+.\md5\md5Std.h(12): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a = ROTATE_LEFT(a,s); \  
+.\md5\md5Std.h(13): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += b; \  
+.\md5\md5Std.h(15): warning:  #1565-D: white space between backslash and newline in line splice ignored
+  #define GG(a,b,c,d,x,s,ac) \  
+.\md5\md5Std.h(16): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            { \  
+.\md5\md5Std.h(17): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += G(b,c,d) + x + ac; \  
+.\md5\md5Std.h(18): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a = ROTATE_LEFT(a,s); \  
+.\md5\md5Std.h(19): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += b; \  
+.\md5\md5Std.h(21): warning:  #1565-D: white space between backslash and newline in line splice ignored
+  #define HH(a,b,c,d,x,s,ac) \  
+.\md5\md5Std.h(22): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            { \  
+.\md5\md5Std.h(23): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += H(b,c,d) + x + ac; \  
+.\md5\md5Std.h(24): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a = ROTATE_LEFT(a,s); \  
+.\md5\md5Std.h(25): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += b; \  
+.\md5\md5Std.h(27): warning:  #1565-D: white space between backslash and newline in line splice ignored
+  #define II(a,b,c,d,x,s,ac)\  
+.\md5\md5Std.h(28): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            {\  
+.\md5\md5Std.h(29): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += I(b,c,d) + x + ac;\  
+.\md5\md5Std.h(30): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a = ROTATE_LEFT(a,s);\  
+.\md5\md5Std.h(31): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += b;\  
+.\md5\md5Std.h(46): warning:  #1-D: last line of file ends without a newline
+  #endif
+main.cpp(142): warning:  #2748-D: null argument provided for parameter marked with attribute "nonnull"
+      if(strcmp(eth.getIPAddress(),
+ULL) == NULL) {
+main.cpp(149): warning:  #181-D: argument is incompatible with corresponding format string conversion
+  		&MAC_ADDRESS[0],&MAC_ADDRESS[1],&MAC_ADDRESS[2],&MAC_ADDRESS[3],&MAC_ADDRESS[4],&MAC_ADDRESS[5]);
+main.cpp(149): warning:  #181-D: argument is incompatible with corresponding format string conversion
+  		&MAC_ADDRESS[0],&MAC_ADDRESS[1],&MAC_ADDRESS[2],&MAC_ADDRESS[3],&MAC_ADDRESS[4],&MAC_ADDRESS[5]);
+main.cpp(149): warning:  #181-D: argument is incompatible with corresponding format string conversion
+  		&MAC_ADDRESS[0],&MAC_ADDRESS[1],&MAC_ADDRESS[2],&MAC_ADDRESS[3],&MAC_ADDRESS[4],&MAC_ADDRESS[5]);
+main.cpp(149): warning:  #181-D: argument is incompatible with corresponding format string conversion
+  		&MAC_ADDRESS[0],&MAC_ADDRESS[1],&MAC_ADDRESS[2],&MAC_ADDRESS[3],&MAC_ADDRESS[4],&MAC_ADDRESS[5]);
+main.cpp(149): warning:  #181-D: argument is incompatible with corresponding format string conversion
+  		&MAC_ADDRESS[0],&MAC_ADDRESS[1],&MAC_ADDRESS[2],&MAC_ADDRESS[3],&MAC_ADDRESS[4],&MAC_ADDRESS[5]);
+main.cpp(149): warning:  #181-D: argument is incompatible with corresponding format string conversion
+  		&MAC_ADDRESS[0],&MAC_ADDRESS[1],&MAC_ADDRESS[2],&MAC_ADDRESS[3],&MAC_ADDRESS[4],&MAC_ADDRESS[5]);
+main.cpp(980): warning:  #2570-D: function "rtos::Thread::Thread(void (*)(const void *), void *, osPriority, std::uint32_t, unsigned char *)" (declared at line 138 of "mbed-rtos/rtos/Thread.h") was declared deprecated ("Thread-spawning constructors hide errors and may lead to complex program state when a thread is declared")
+  	Thread th1(oneSecondThread,
+ULL,osPriorityNormal,512);
+main.cpp: 29 warnings, 0 errors
+compiling checksum.c...
+compiling err.c...
+compiling memcpy.c...
+compiling netbuf.c...
+compiling netifapi.c...
+compiling cJSON.cpp...
+cJSON/cJSON.cpp(55): warning:  #1293-D: assignment in condition
+        if (!(copy = (char*)cJSON_malloc(len))) return 0;
+cJSON/cJSON.cpp(282): warning:  #1293-D: assignment in condition
+      ptr=str;while ((token=*ptr) && ++len) {if (strchr("\"\\\b\f\n\r\t",token)) len++; else if (token<32) len+=5;ptr++;}
+cJSON/cJSON.cpp(426): warning:  #1293-D: assignment in condition
+          if (!(new_item=cJSON_New_Item())) return 0;     /* memory fail */
+cJSON/cJSON.cpp(538): warning:  #1293-D: assignment in condition
+          if (!(new_item=cJSON_New_Item()))   return 0; /* memory fail */
+cJSON/cJSON.cpp: 4 warnings, 0 errors
+compiling tcpip.c...
+compiling netdb.c...
+compiling sys_arch.c...
+compiling sockets.c...
+compiling def.c...
+compiling dns.c...
+compiling mem.c...
+compiling init.c...
+compiling memp.c...
+compiling netif.c...
+compiling dhcp.c...
+compiling pbuf.c...
+compiling raw.c...
+compiling stats.c...
+compiling lib_crc16.cpp...
+compiling tcp_in.c...
+compiling timers.c...
+compiling udp.c...
+compiling tcp.c...
+compiling tcp_out.c...
+compiling autoip.c...
+compiling ip_addr.c...
+compiling icmp.c...
+compiling igmp.c...
+compiling inet.c...
+compiling inet_chksum.c...
+compiling ip.c...
+compiling auth.c...
+compiling ethernetif.c...
+compiling ip_frag.c...
+compiling chap.c...
+compiling slipif.c...
+compiling chpms.c...
+compiling etharp.c...
+compiling magic.c...
+compiling lcp.c...
+compiling ppp.c...
+compiling fsm.c...
+compiling md5.c...
+compiling ipcp.c...
+compiling pap.c...
+compiling rtos_idle.c...
+compiling Mutex.cpp...
+compiling RtosTimer.cpp...
+compiling Semaphore.cpp...
+compiling randm.c...
+compiling ppp_oe.c...
+compiling vj.c...
+compiling asn1_enc.c...
+compiling asn1_dec.c...
+compiling mib2.c...
+compiling Thread.cpp...
+compiling WatchDog.cpp...
+compiling mib_structs.c...
+compiling msg_in.c...
+compiling msg_out.c...
+compiling md5Std.cpp...
+md5\md5Std.h(9): warning:  #1565-D: white space between backslash and newline in line splice ignored
+  #define FF(a,b,c,d,x,s,ac) \  
+md5\md5Std.h(10): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            { \  
+md5\md5Std.h(11): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += F(b,c,d) + x + ac; \  
+md5\md5Std.h(12): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a = ROTATE_LEFT(a,s); \  
+md5\md5Std.h(13): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += b; \  
+md5\md5Std.h(15): warning:  #1565-D: white space between backslash and newline in line splice ignored
+  #define GG(a,b,c,d,x,s,ac) \  
+md5\md5Std.h(16): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            { \  
+md5\md5Std.h(17): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += G(b,c,d) + x + ac; \  
+md5\md5Std.h(18): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a = ROTATE_LEFT(a,s); \  
+md5\md5Std.h(19): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += b; \  
+md5\md5Std.h(21): warning:  #1565-D: white space between backslash and newline in line splice ignored
+  #define HH(a,b,c,d,x,s,ac) \  
+md5\md5Std.h(22): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            { \  
+md5\md5Std.h(23): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += H(b,c,d) + x + ac; \  
+md5\md5Std.h(24): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a = ROTATE_LEFT(a,s); \  
+md5\md5Std.h(25): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += b; \  
+md5\md5Std.h(27): warning:  #1565-D: white space between backslash and newline in line splice ignored
+  #define II(a,b,c,d,x,s,ac)\  
+md5\md5Std.h(28): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            {\  
+md5\md5Std.h(29): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += I(b,c,d) + x + ac;\  
+md5\md5Std.h(30): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a = ROTATE_LEFT(a,s);\  
+md5\md5Std.h(31): warning:  #1565-D: white space between backslash and newline in line splice ignored
+            a += b;\  
+md5\md5Std.h(46): warning:  #1-D: last line of file ends without a newline
+  #endif
+md5\md5Std.cpp: 21 warnings, 0 errors
+linking...
+Program Size: Code=90734 RO-data=5446 RW-data=584 ZI-data=66372  
+After Build - User command #1: fromelf --bin -o .\build\uvision5\bin\SharedPlugs.bin .\build\uvision5\SharedPlugs.axf
+".\build\uvision5\SharedPlugs.axf" - 0 Error(s), 136 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  I:\Project\SharedPlug\APP\RTE
+  F:\install\softwares\Keil_v5\ARM\PACK\Keil\Kinetis_K60_DFP\1.4.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:40
+</pre>
+</body>
+</html>
